@@ -133,7 +133,7 @@ macro_rules! Q_OBJECT{
                         unsafe{
                             let mut local = $wrapper{
                                 origin: Box::new(origin),
-                                ptr: ::std::mem::uninitialized(),
+                                ptr: ::std::mem::zeroed(),
                                 properties: ::std::collections::HashMap::new(),
                             };
                             $(local.properties.insert(stringify!($propname), ($proptype::default().into(), $proptype::metatype()));)*
